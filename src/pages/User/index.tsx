@@ -30,6 +30,13 @@ export default function UserRegistration({ navigation }: any) {
     });
   }
 
+  function goLogin(): void {
+    navigation.reset({
+      index: 0,
+      routes: [{ name: "Login" }],
+    });
+  }
+
   function validateFields(): void {
     let user: User = {
       name: "",
@@ -181,7 +188,7 @@ export default function UserRegistration({ navigation }: any) {
         {error?.length > 0 && <Text style={styles.error}>{error}</Text>}
 
         <Button onPress={validateFields} title="Cadastrar" />
-        <Button onPress={goHome} title="Cancelar" />
+        <Button onPress={goLogin} title="Cancelar" />
         </View>
       </View>
     </KeyboardAvoidingView>
